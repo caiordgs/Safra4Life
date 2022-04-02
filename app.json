@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Safra4Life",
+    "slug": "Safra4Life",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
