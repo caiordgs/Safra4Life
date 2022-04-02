@@ -12,8 +12,7 @@ import ReactNativeSettingsPage, {
   SliderRow
 } from 'react-native-settings-page';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -94,10 +93,10 @@ function SScreen() {
     <SectionRow>
       <NavigateRow
         text='Ver seu perfil completo'
-        iconName='faCoffee' />
+        iconName="fa-regular fa-user" />
       <SwitchRow 
         text='Modo Escuro' 
-        iconName='faRegular faMoon' />
+        iconName='fa-regular fa-moon' />
       <SwitchRow 
         text='Entrada com Biometria'
         iconName='fa-regular fa-fingerprint' />
