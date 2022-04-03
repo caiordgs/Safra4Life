@@ -1,10 +1,12 @@
-import React from 'react';
-import { CheckBox, Text, View, ScrollView  } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, ScrollView, Picker } from 'react-native';
+import CheckBox from 'expo-checkbox';
 
 import TextInput from '../components/TextInput';
 import Button from '../components/Button';
 
 export default function Cadastro() {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false)
   return (
     <View
       style={{
@@ -15,9 +17,6 @@ export default function Cadastro() {
       }}
     >
       <ScrollView>
-      <Text style={{ color: '#223e4b', fontSize: 20, marginBottom: 16 }}>
-        Cadastro
-      </Text>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
           placeholder="E-mail"
@@ -31,6 +30,7 @@ export default function Cadastro() {
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
           placeholder="Senha"
+          secureTextEntry
           autoCapitalize="none"
           keyboardAppearance="dark"
           returnKeyType="go"
@@ -112,12 +112,28 @@ export default function Cadastro() {
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
-          placeholder=""
+          placeholder="Você é PCD? Se sim, especifique."
           autoCapitalize="none"
           keyboardAppearance="dark"
           returnKeyType="go"
           returnKeyLabel="go"
         />
+      </View>
+      <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
+        <Picker>
+          <Picker.Item label="Masculino" />
+          <Picker.Item label="Feminino" />
+          <Picker.Item label="Prefiro não responder" />
+          <Picker.Item label="Escolher" />
+        </Picker>
+      </View>
+      <View>
+        <CheckBox
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        />
+        <Text style={{ paddingBottom: 10 }}>Você autoriza o seu cadastro no Open Banking Safra?</Text>
       </View>
       <Button label="Cadastrar" onPress={() => true} />
       </ScrollView>

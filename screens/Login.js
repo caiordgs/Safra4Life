@@ -4,7 +4,6 @@ import { useFormik } from 'formik';
 
 import TextInput from '../components/TextInput';
 import Button from '../components/Button';
-import Hero from '../Hero';
 
 const homeImage = { uri: "https://media.discordapp.net/attachments/956541509300269063/959755929732120596/Botao_app_v1_azul.png?width=660&height=660" };
 

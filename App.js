@@ -4,15 +4,10 @@ import { StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import ReactNativeSettingsPage, { 
-	SectionRow, 
-	NavigateRow,
-  SwitchRow,
-  SliderRow
-} from 'react-native-settings-page';
 import Login from './screens/Login';
 import Cadastro from './screens/Cadastro'
 import Hero from './Hero';
+import Config from './screens/Config';
 
 const homeImage = { uri: "https://media.discordapp.net/attachments/956541509300269063/959755929732120596/Botao_app_v1_azul.png?width=660&height=660" };
 
@@ -33,29 +28,7 @@ function Form() {
 
 function SScreen() {
   return(
-    <ReactNativeSettingsPage>
-    <SectionRow>
-      <NavigateRow
-        text='Ver seu perfil completo'
-        iconName="fa-regular fa-user" />
-      <SwitchRow 
-        text='Modo Escuro' 
-        iconName='fa-regular fa-moon' />
-      <SwitchRow 
-        text='Entrada com Biometria'
-        iconName='fa-regular fa-fingerprint' />
-      <Text style={styles.accessibility}>Acessibilidade</Text>
-      <SliderRow 
-        text='Tamanho da Fonte'
-        iconName='fa-regular fa-font-case'
-        _color='#000'
-        _min={0}
-        _max={100} />
-      <SwitchRow 
-        text='Texto para fala (Text-to-speech)'
-        iconName='fa-solid fa-ear-deaf' />
-    </SectionRow>
-  </ReactNativeSettingsPage>
+    <Config />
   );
 }
 
