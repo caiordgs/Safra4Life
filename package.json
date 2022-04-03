@@ -34,7 +34,7 @@
     "react-native-settings-page": "^2.0.6",
     "react-native-settings-screen": "^2.2.1",
     "react-native-web": "0.17.1",
-    "styled-components": "5.3.5",
+    "styled-components": "^5.3.5",
     "tcomb-form-native": "^0.6.20",
     "yup": "^0.32.11"
   },

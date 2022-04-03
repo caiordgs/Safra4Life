@@ -4,10 +4,12 @@ import CheckBox from 'expo-checkbox';
 
 import TextInput from '../components/TextInput';
 import Button from '../components/Button';
+import Hero from '../Hero';
 
 export default function Cadastro() {
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
   return (
+    <>
     <View
       style={{
         flex: 1,
@@ -133,10 +135,12 @@ export default function Cadastro() {
           value={toggleCheckBox}
           onValueChange={(newValue) => setToggleCheckBox(newValue)}
         />
-        <Text style={{ paddingBottom: 10 }}>Você autoriza o seu cadastro no Open Banking Safra?</Text>
+        <Text style={{ paddingBottom: 10, color: '#151f52' }}>Você autoriza o seu cadastro no Open Banking Safra?</Text>
       </View>
       <Button label="Cadastrar" onPress={() => true} />
       </ScrollView>
     </View>
+    <Hero />
+    </>
   );
 }

@@ -16,7 +16,7 @@ export default function Button({ label, onPress }) {
       onPress={onPress}
     >
       <Text
-        style={{ fontSize: 18, color: 'white', textTransform: 'uppercase' }}
+        style={{ fontSize: 18, color: '#fff', textTransform: 'uppercase' }}
       >
         {label}
       </Text>

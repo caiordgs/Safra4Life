@@ -20,7 +20,7 @@ export default function Login() {
       <Text style={{ color: '#223e4b', fontSize: 20, marginBottom: 16 }}>
         Login
       </Text>
-      <View style={{ paddingHorizontal: 32, marginBottom: 16, width: '100%' }}>
+      <View style={{ paddingHorizontal: 32, marginBottom: 16, width: '100%', color: "#223e4b" }}>
         <TextInput
           icon="mail"
           placeholder="Digite seu login"

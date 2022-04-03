@@ -4,12 +4,13 @@ import { StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
 import Login from './screens/Login';
 import Cadastro from './screens/Cadastro'
 import Hero from './Hero';
 import Config from './screens/Config';
+import Carteira from './screens/Carteira';
 
-const homeImage = { uri: "https://media.discordapp.net/attachments/956541509300269063/959755929732120596/Botao_app_v1_azul.png?width=660&height=660" };
 
 function HomeScreen() {
   return (
@@ -29,6 +30,12 @@ function Form() {
 function SScreen() {
   return(
     <Config />
+  );
+}
+
+function Wallet() {
+  return(
+    <Carteira />
   );
 }
 
@@ -68,7 +75,7 @@ export default function App() {
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Cadastro" component={Form} />
         <Tab.Screen name="Assessores" component={SScreen} />
-        <Tab.Screen name="Carteira" component={SScreen} />
+        <Tab.Screen name="Carteira" component={Wallet} />
         <Tab.Screen name="Configurações" component={SScreen} />
       </Tab.Navigator>
     </NavigationContainer>
