@@ -114,7 +114,7 @@ export default function Cadastro() {
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
-          placeholder="Você é PCD? Se sim, especifique."
+          placeholder="Você é PCD? Se sim, especifique"
           autoCapitalize="none"
           keyboardAppearance="dark"
           returnKeyType="go"
@@ -126,7 +126,7 @@ export default function Cadastro() {
           <Picker.Item label="Masculino" />
           <Picker.Item label="Feminino" />
           <Picker.Item label="Prefiro não responder" />
-          <Picker.Item label="Escolher" />
+          <Picker.Item label="Gênero:" />
         </Picker>
       </View>
       <View>
@@ -140,7 +140,6 @@ export default function Cadastro() {
       <Button label="Cadastrar" onPress={() => true} />
       </ScrollView>
     </View>
-    <Hero />
     </>
   );
 }

@@ -1,15 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Button, Image, Platform, } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Constants } from 'expo-constants';
 
 import Login from './screens/Login';
 import Cadastro from './screens/Cadastro'
 import Hero from './Hero';
 import Config from './screens/Config';
 import Carteira from './screens/Carteira';
+import api from './Src/Api';
 
 
 function HomeScreen() {
@@ -42,8 +44,8 @@ function Wallet() {
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-    const [email, setUsuario] = useState("");
-    const [senha, setSenha] = useState("");
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
   return (
     <>
     <NavigationContainer>
@@ -79,6 +81,7 @@ export default function App() {
         <Tab.Screen name="Configurações" component={SScreen} />
       </Tab.Navigator>
     </NavigationContainer>
+    
     </>
   );
 }

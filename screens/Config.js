@@ -10,33 +10,41 @@ import ReactNativeSettingsPage, {
 
 export default function Config() {
     return(
-      <ReactNativeSettingsPage>
+      <ReactNativeSettingsPage style={styles.container}>
       <SectionRow>
         <NavigateRow
           text='Ver seu perfil completo'
-          iconName="fa-regular fa-user" />
+          onPress={() => true}
+        //   iconName="fa-regular fa-user"
+           />
         <SwitchRow 
-          text='Modo Escuro' 
-          iconName='fa-regular fa-moon' />
+            text='Modo Escuro' 
+        //   iconName='fa-regular fa-moon'
+           />
         <SwitchRow 
           text='Entrada com Biometria'
-          iconName='fa-regular fa-fingerprint' />
+        //   iconName='fa-regular fa-fingerprint'
+           />
         <Text style={styles.accessibility}>Acessibilidade</Text>
         <SliderRow 
           text='Tamanho da Fonte'
-          iconName='fa-regular fa-font-case'
+        //   iconName='fa-regular fa-font-case'
           _color='#000'
           _min={0}
           _max={100} />
         <SwitchRow 
           text='Texto para fala (Text-to-speech)'
-          iconName='fa-solid fa-ear-deaf' />
+        //   iconName='fa-solid fa-ear-deaf'
+           />
       </SectionRow>
     </ReactNativeSettingsPage>
     );
 }
 
 const styles = StyleSheet.create({
+    container:{
+
+    },
     accessibility: {
         fontSize: 25,
         lineHeight: 84,
