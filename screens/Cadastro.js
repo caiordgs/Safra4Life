@@ -4,10 +4,19 @@ import CheckBox from 'expo-checkbox';
 
 import TextInput from '../components/TextInput';
 import Button from '../components/Button';
-import Hero from '../Hero';
 
 export default function Cadastro() {
+  // let state = { userEmail: '' }
+  
+  const [userEmail,setUserEmail] = useState();
+  const [userName,setUserName] = useState();
+  const [userPassword, setUserPassword] = useState();
+  const [userPasswordConfirmation, setUserPasswordConfirmation] = useState();
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
+
+  // function handleEmailChange(userEmail){ setUserEmail(userEmail); }
+  
+
   return (
     <>
     <View
@@ -21,6 +30,8 @@ export default function Cadastro() {
       <ScrollView>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
+          value={userEmail}
+          onValueChange={(userEmail) => setUserEmail(userEmail)}
           placeholder="E-mail"
           autoCapitalize="none"
           keyboardType="email-address"
@@ -31,21 +42,37 @@ export default function Cadastro() {
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
+          value={userPassword}
+          onValueChange={(userPassword) => setUserPassword(userPassword)}
           placeholder="Senha"
           secureTextEntry
           autoCapitalize="none"
           keyboardAppearance="dark"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
+        />
+        </View>
+        <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
+        <TextInput
+          value={userPasswordConfirmation}
+          onValueChange={(userPasswordConfirmation) => setUserPasswordConfirmation(userPasswordConfirmation)}
+          placeholder="Confirmação de Senha"
+          secureTextEntry
+          autoCapitalize="none"
+          keyboardAppearance="dark"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
+          value={userName}
+          onValueChange={(userName) => setUserName(userName)}
           placeholder="Nome"
           autoCapitalize="none"
           keyboardAppearance="dark"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
@@ -53,8 +80,8 @@ export default function Cadastro() {
           placeholder="Sobrenome"
           autoCapitalize="none"
           keyboardAppearance="dark"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
@@ -63,8 +90,8 @@ export default function Cadastro() {
           autoCapitalize="none"
           keyboardAppearance="dark"
           keyboardType="number-pad"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
@@ -72,8 +99,8 @@ export default function Cadastro() {
           placeholder="Endereço"
           autoCapitalize="none"
           keyboardAppearance="dark"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
@@ -81,8 +108,8 @@ export default function Cadastro() {
           placeholder="Cidade"
           autoCapitalize="none"
           keyboardAppearance="dark"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
@@ -90,8 +117,8 @@ export default function Cadastro() {
           placeholder="Estado"
           autoCapitalize="none"
           keyboardAppearance="dark"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
@@ -99,8 +126,8 @@ export default function Cadastro() {
           placeholder="País"
           autoCapitalize="none"
           keyboardAppearance="dark"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
@@ -108,13 +135,13 @@ export default function Cadastro() {
           placeholder="Telefone"
           toCapitalize="none"
           keyboardAppearance="dark"
-          returnKeyType="go"
-          returnKeyLabel="go"
+          returnKeyType="next"
+          returnKeyLabel="next"
         />
       </View>
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
-          placeholder="Você é PCD? Se sim, especifique"
+          placeholder="PCD? Se sim, especifique."
           autoCapitalize="none"
           keyboardAppearance="dark"
           returnKeyType="go"
@@ -137,7 +164,7 @@ export default function Cadastro() {
         />
         <Text style={{ paddingBottom: 10, color: '#151f52' }}>Você autoriza o seu cadastro no Open Banking Safra?</Text>
       </View>
-      <Button label="Cadastrar" onPress={() => true} />
+      <Button label="Cadastrar" onPress={() => {console.log(this.userEmail);console.log(userPassword);console.log(userPasswordConfirmation);console.log(userName)}} />
       </ScrollView>
     </View>
     </>

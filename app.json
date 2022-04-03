@@ -1,10 +1,15 @@
 {
   "expo": {
-    "name": "Safra4Life",
-    "slug": "Safra4Life",
+    "name": "SafraPass",
+    "icon": "./assets/Botao_app_v1_azul.png",
+    "slug": "SafraPass",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
+  },
+  "android": {
+    "package": "com.safra.safrapass",
+    "versionCode": 1
   }
 }

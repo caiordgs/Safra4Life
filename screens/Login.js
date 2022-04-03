@@ -4,8 +4,12 @@ import { useFormik } from 'formik';
 
 import TextInput from '../components/TextInput';
 import Button from '../components/Button';
+import { get } from 'react-hook-form';
 
 const homeImage = { uri: "https://media.discordapp.net/attachments/956541509300269063/959755929732120596/Botao_app_v1_azul.png?width=660&height=660" };
+const getLogin = {
+  
+};
 
 export default function Login() {
   return (
@@ -44,7 +48,7 @@ export default function Login() {
           returnKeyLabel="go"
         />
       </View>
-      <Button label="Entrar" onPress={() => true} />
+      <Button label="Entrar" onPress={() => {getLogin}} />
     </View>
   );
 }

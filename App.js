@@ -11,6 +11,7 @@ import Cadastro from './screens/Cadastro'
 import Hero from './Hero';
 import Config from './screens/Config';
 import Carteira from './screens/Carteira';
+import Assessores from './screens/Assessores';
 import api from './Src/Api';
 
 
@@ -39,6 +40,12 @@ function Wallet() {
   return(
     <Carteira />
   );
+}
+
+function Advisors() {
+  return(
+    <Assessores />
+  )
 }
 
 const Tab = createBottomTabNavigator();
@@ -76,7 +83,7 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Cadastro" component={Form} />
-        <Tab.Screen name="Assessores" component={SScreen} />
+        <Tab.Screen name="Assessores" component={Advisors} />
         <Tab.Screen name="Carteira" component={Wallet} />
         <Tab.Screen name="Configurações" component={SScreen} />
       </Tab.Navigator>
