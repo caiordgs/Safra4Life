@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView, Picker } from 'react-native';
+import { Text, View, ScrollView, Picker, TouchableOpacity } from 'react-native';
 import CheckBox from 'expo-checkbox';
 
 import TextInput from '../components/TextInput';
 import Button from '../components/Button';
+import api from '../Src/Api';
 
 export default function Cadastro() {
-  // let state = { userEmail: '' }
+  signIn = async () => {
+    const response = await api.post('http://localhost:3000/users', {
+        user: {
+        email: "caiordgs@outlook.com",
+        password: "123456",
+        password_confirmation : "123456"
+      }
+    });
+    const { user, token } = response.data;
+    console.log(response.data);
+  };
   
   const [userEmail,setUserEmail] = useState();
   const [userName,setUserName] = useState();
@@ -14,7 +25,24 @@ export default function Cadastro() {
   const [userPasswordConfirmation, setUserPasswordConfirmation] = useState();
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
-  // function handleEmailChange(userEmail){ setUserEmail(userEmail); }
+  function handleEmailChange(userEmail){ setUserEmail(userEmail); }
+  function handleNameChange(userName){ setUserName(userName); }
+  function handlePasswordChange(userPassword){ setUserPassword(userPassword); }
+  function handlePasswordConfirmation(userPasswordConfirmation){ setUserPasswordConfirmation(userPasswordConfirmation); }
+  function handleButtonPress(){
+    console.log({userEmail, userName, userPassword, userPasswordConfirmation});
+    // this.userMap.user=this.userName;
+    // console.log(this.userMap.user);
+    signIn;
+  }
+
+  let userMap = {
+    "user": {
+        "email": "",
+        "password": "",
+        "password_confirmation": ""
+    }
+  }
   
 
   return (
@@ -31,7 +59,7 @@ export default function Cadastro() {
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
           value={userEmail}
-          onValueChange={(userEmail) => setUserEmail(userEmail)}
+          onChangeText={handleEmailChange}
           placeholder="E-mail"
           autoCapitalize="none"
           keyboardType="email-address"
@@ -43,7 +71,7 @@ export default function Cadastro() {
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
           value={userPassword}
-          onValueChange={(userPassword) => setUserPassword(userPassword)}
+          onChangeText={handlePasswordChange}
           placeholder="Senha"
           secureTextEntry
           autoCapitalize="none"
@@ -55,7 +83,7 @@ export default function Cadastro() {
         <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
           value={userPasswordConfirmation}
-          onValueChange={(userPasswordConfirmation) => setUserPasswordConfirmation(userPasswordConfirmation)}
+          onChangeText={handlePasswordConfirmation}
           placeholder="Confirmação de Senha"
           secureTextEntry
           autoCapitalize="none"
@@ -67,7 +95,7 @@ export default function Cadastro() {
       <View style={{ paddingHorizontal: 0, marginBottom: 16, width: '100%' }}>
         <TextInput
           value={userName}
-          onValueChange={(userName) => setUserName(userName)}
+          onChangeText={handleNameChange}
           placeholder="Nome"
           autoCapitalize="none"
           keyboardAppearance="dark"
@@ -164,7 +192,7 @@ export default function Cadastro() {
         />
         <Text style={{ paddingBottom: 10, color: '#151f52' }}>Você autoriza o seu cadastro no Open Banking Safra?</Text>
       </View>
-      <Button label="Cadastrar" onPress={() => {console.log(this.userEmail);console.log(userPassword);console.log(userPasswordConfirmation);console.log(userName)}} />
+      <Button label="Cadastrar" onPress={handleButtonPress} />
       </ScrollView>
     </View>
     </>
