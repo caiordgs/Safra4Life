@@ -1,19 +1,21 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ImageBackground, StyleSheet } from 'react-native';
 import { useFormik } from 'formik';
 
 import TextInput from '../components/TextInput';
 import Button from '../components/Button';
+import Hero from '../Hero';
 
+const homeImage = { uri: "https://media.discordapp.net/attachments/956541509300269063/959755929732120596/Botao_app_v1_azul.png?width=660&height=660" };
 
 export default function Login() {
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: "#FFF"
       }}
     >
       <Text style={{ color: '#223e4b', fontSize: 20, marginBottom: 16 }}>
@@ -22,7 +24,7 @@ export default function Login() {
       <View style={{ paddingHorizontal: 32, marginBottom: 16, width: '100%' }}>
         <TextInput
           icon="mail"
-          placeholder="Digite seu e-mail"
+          placeholder="Digite seu login"
           autoCapitalize="none"
           autoCompleteType="email"
           keyboardType="email-address"

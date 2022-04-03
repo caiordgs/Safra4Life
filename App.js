@@ -1,15 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Button, 
-  Alert, 
-  ImageBackground, 
-  StyleSheet, 
-  Text, 
-  TextInput, 
-  TouchableHighlight, 
-  TouchableOpacity, 
-  View
-} from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -20,13 +11,17 @@ import ReactNativeSettingsPage, {
   SliderRow
 } from 'react-native-settings-page';
 import Login from './screens/Login';
-import Cadastro from './screens/Cadastro';
+import Cadastro from './screens/Cadastro'
+import Hero from './Hero';
 
 const homeImage = { uri: "https://media.discordapp.net/attachments/956541509300269063/959755929732120596/Botao_app_v1_azul.png?width=660&height=660" };
 
 function HomeScreen() {
   return (
+    <>
+    <Hero />
     <Login />
+    </>
   );
 }
 
@@ -109,37 +104,37 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  image: {
-    flex: 1,
-    justifyContent: "center",
-  },
-  text: {
-    fontSize: 20,
-    lineHeight: 84,
-    fontWeight: "bold",
-    textAlign: "center",
-    color: "#151f52"
-  },
-  accessibility: {
-    fontSize: 25,
-    lineHeight: 84,
-    fontWeight: "bold",
-    textAlign: "center",
-    color: "#000"
-  },
-  home: {
-    color: "#151f52",
-    textAlign: "center",
-    fontSize: 50
-  },
-  login: {
-    backgroundColor: "white",
-    padding: 15,
-  },
-  settings: {
-    backgroundColor: "white"
-  }
+container: {
+  flex: 1,
+},
+image: {
+  flex: 1,
+  justifyContent: "center",
+},
+text: {
+  fontSize: 20,
+  lineHeight: 84,
+  fontWeight: "bold",
+  textAlign: "center",
+  color: "#151f52"
+},
+accessibility: {
+  fontSize: 25,
+  lineHeight: 84,
+  fontWeight: "bold",
+  textAlign: "center",
+  color: "#000"
+},
+home: {
+  color: "#151f52",
+  textAlign: "center",
+  fontSize: 50
+},
+login: {
+  backgroundColor: "white",
+  padding: 15,
+},
+settings: {
+  backgroundColor: "white"
+}
 });
