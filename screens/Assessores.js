@@ -57,7 +57,7 @@ export default class Users extends Component {
                     <Text style={styles.name}>{item.name}</Text>
                     <Text style={styles.position}>{item.position}</Text>
                     <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                      <Text style={styles.followButtonText}>Follow</Text>  
+                      <Text style={styles.followButtonText}>Contato</Text>  
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -131,14 +131,14 @@ const styles = StyleSheet.create({
     fontSize:18,
     flex:1,
     alignSelf:'center',
-    color:"#008080",
+    color:"#151f52",
     fontWeight:'bold'
   },
   position:{
     fontSize:14,
     flex:1,
     alignSelf:'center',
-    color:"#696969"
+    color:"#151f52"
   },
   followButton: {
     marginTop:10,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius:30,
-    backgroundColor: "#00BFFF",
+    backgroundColor: "#151f52",
   },
   followButtonText:{
     color: "#FFFFFF",
