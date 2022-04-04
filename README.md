@@ -7,7 +7,7 @@
 
 ## 📱 Projeto do APP
 
-<a href="https://github.com/caiordgs/Safra4Life">Safra Compass - Mobile</a>
+<a href="https://github.com/caiosant/SafraCompass">Safra Compass - Backend</a>
 
 ## 🚀 Começando
 
