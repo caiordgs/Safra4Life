@@ -6,7 +6,10 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "safracompass.apk"
+    }
   },
   "android": {
     "package": "com.safra.safrapass",

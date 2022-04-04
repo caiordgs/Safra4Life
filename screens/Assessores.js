@@ -31,7 +31,7 @@ export default class Users extends Component {
   }
 
   clickEventListener(item) {
-    Alert.alert(item.name)
+    Alert.alert(item.name, item.position)
   }
 
   render() {

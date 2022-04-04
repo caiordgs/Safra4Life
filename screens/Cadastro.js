@@ -7,17 +7,6 @@ import Button from '../components/Button';
 import api from '../Src/Api';
 
 export default function Cadastro() {
-  signIn = async () => {
-    const response = await api.post('http://localhost:3000/users', {
-        user: {
-        email: "caiordgs@outlook.com",
-        password: "123456",
-        password_confirmation : "123456"
-      }
-    });
-    const { user, token } = response.data;
-    console.log(response.data);
-  };
   
   const [userEmail,setUserEmail] = useState();
   const [userName,setUserName] = useState();
@@ -31,10 +20,26 @@ export default function Cadastro() {
   function handlePasswordConfirmation(userPasswordConfirmation){ setUserPasswordConfirmation(userPasswordConfirmation); }
   function handleButtonPress(){
     console.log({userEmail, userName, userPassword, userPasswordConfirmation});
-    // this.userMap.user=this.userName;
-    // console.log(this.userMap.user);
-    signIn;
-  }
+    this.userMap.user=this.userName;
+    console.log(this.userMap.user);
+      console.log("Entrou no método");
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          "user": {
+              "email": "santanacaiio@gmail.com",
+              "password": "12345678",
+              "password_confirmation": "12345678"
+          }
+      })
+    };
+    const response = fetch('http://localhost:3000/users', requestOptions)
+    const data = response.json();
+    this.setState({ postId: data.id });
+    console.log(data);
+  };
+  
 
   let userMap = {
     "user": {
@@ -198,3 +203,4 @@ export default function Cadastro() {
     </>
   );
 }
+

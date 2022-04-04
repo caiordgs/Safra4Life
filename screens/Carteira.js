@@ -8,7 +8,6 @@ import {
   ScrollView
 } from 'react-native';
 
-
 export default class ProfileDetail extends Component {
   
   constructor(props) {
@@ -26,16 +25,15 @@ export default class ProfileDetail extends Component {
 
           <View style={styles.card}>
             <Text style={styles.cardTittle}>Detalhes:</Text>   
-            <Text> - Perfil: Agressivo</Text>   
-            <Text> - </Text>   
-            <Text> - Lorem ipsum dolor sit amet</Text>   
+            <Text style={styles.cardDescription}> - Perfil: Agressivo</Text>   
+            <Text style={styles.cardDescription}> - #Renda-Variável #Fundo-Imobiliário</Text>      
           </View>
 
           <View style={styles.card}>
-            <Text style={styles.cardTittle}>Patrimônio Distribuido:</Text>   
-            <Text> - Renda Fixa: R$ 20.000,00</Text>   
-            <Text> - Lorem ipsum dolor sit amet</Text>   
-            <Text> - Lorem ipsum dolor sit amet</Text>   
+            <Text style={styles.cardDescription}>Patrimônio Distribuido:</Text>   
+            <Text style={styles.cardDescription}> - Renda Variável: R$ 20.000,00</Text>   
+            <Text style={styles.cardDescription}> - Fundo Imobiliário: R$ 15.000,00</Text>   
+            <Text style={styles.cardDescription}> - Ações: R$ 7.500,00</Text>   
           </View>
         </View>
       </ScrollView>
@@ -50,7 +48,12 @@ const styles = StyleSheet.create({
     backgroundColor : "#DCDCDC"
   },
   cardTittle:{
-    color:"#808080",
+    color:"white",
+    fontSize:22,
+    marginBottom:5,
+  },
+  cardDescription:{
+    color:"white",
     fontSize:22,
     marginBottom:5,
   },
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
     borderRadius: 50
   },
   card:{
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#151f52",
     borderRadius:10,
     padding:10,
     height:100,
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
   name:{
     marginTop:10,
     fontSize:22,
-    color:"#808080",
+    color:"white",
   },
   photosContainer:{
     flexDirection: 'row',
@@ -89,5 +92,5 @@ const styles = StyleSheet.create({
     height:113,
     marginTop:5,
     marginRight:5,
-  }
+  },
 });

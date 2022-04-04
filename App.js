@@ -12,7 +12,7 @@ import Hero from './Hero';
 import Config from './screens/Config';
 import Carteira from './screens/Carteira';
 import Assessores from './screens/Assessores';
-import api from './Src/Api';
+import ProfileView from './screens/Perfil';
 
 
 function HomeScreen() {
@@ -48,6 +48,12 @@ function Advisors() {
   )
 }
 
+function Profile() {
+  return(
+    <ProfileView />
+  )
+}
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -73,6 +79,8 @@ export default function App() {
               iconName = focused ? 'people-circle-outline' : 'people-circle-outline'
             } else if (route.name === 'Cadastro') {
               iconName = focused ? 'document-outline' : 'document-outline'
+            } else if (route.name === 'Perfil') {
+              iconName = focused ? 'person-outline' : 'person-outline'
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -86,6 +94,7 @@ export default function App() {
         <Tab.Screen name="Assessores" component={Advisors} />
         <Tab.Screen name="Carteira" component={Wallet} />
         <Tab.Screen name="Configurações" component={SScreen} />
+        <Tab.Screen name="Perfil" component={Profile} />
       </Tab.Navigator>
     </NavigationContainer>
     
